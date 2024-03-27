@@ -1,5 +1,7 @@
 package com.leynnnnnn.nectar;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -37,6 +39,7 @@ public class HomePage extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager2.setCurrentItem(tab.getPosition());
+
             }
 
             @Override

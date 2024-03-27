@@ -1,5 +1,6 @@
 package com.leynnnnnn.nectar;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +19,7 @@ import com.bdtopcoder.smart_slider.SliderItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Shop extends Fragment {
+public class Shop extends Fragment implements ItemInterface{
     ViewPager2 viewPager2;
     List<SliderItem> sliderItems;
     RecyclerView exlusiveOffersRecyclerView, bestSellingRecyclerView;
@@ -48,7 +49,7 @@ public class Shop extends Fragment {
         };
 
         exlusiveOffersRecyclerView = rootView.findViewById(R.id.exclusiveOfferRecyclerView);
-        adapter = new ItemsAdapter(rootView.getContext(), items);
+        adapter = new ItemsAdapter(rootView.getContext(), items, this);
         exlusiveOffersRecyclerView.setHasFixedSize(true);
         exlusiveOffersRecyclerView.setAdapter(adapter);
         exlusiveOffersRecyclerView.setLayoutManager(new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -59,7 +60,7 @@ public class Shop extends Fragment {
                 new ItemInfo(R.drawable.noodle, "Nudes", 1, 12.32)
 
         };
-        bAdapter = new ItemsAdapter(rootView.getContext(), bestSelling);
+        bAdapter = new ItemsAdapter(rootView.getContext(), bestSelling, this);
         bestSellingRecyclerView = rootView.findViewById(R.id.bestSellingRecyclerView);
         bestSellingRecyclerView.setAdapter(bAdapter);
         bestSellingRecyclerView.setLayoutManager(new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -67,5 +68,10 @@ public class Shop extends Fragment {
 
 
         return rootView;
+    }
+
+    @Override
+    public void onItemClick(int pos) {
+        startActivity(new Intent(getContext(), AboutItem.class));
     }
 }
