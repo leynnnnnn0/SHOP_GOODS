@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Nectar</string>
+    <string name="onboarding_text_header">Welcome \nto our score</string>
+    <string name="onboarding_text">Get your groceries in as fast as one hour</string>
+    <string name="get_started">Get Started</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="enter_credentials">Enter your credentials to continue</string>
+    <string name="username">Username</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="terms">By continuing you agree to our <font color="#53B175">Terms of Service</font>\nand <font color="#53B175">Privacy Policy</font></string>
+    <string name="have_account">Already Have an account? <font color="#53B175">Sign in</font></string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="not_have">Don\'t have an account?<font color="#53B175">Sign up</font></string>
+    <string name="search">Search Store</string>
+    <string name="shop">Shop</string>
+    <string name="explore">Explore</string>
+    <string name="cart">Cart</string>
+    <string name="favorite">Favorite</string>
+    <string name="account">Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
