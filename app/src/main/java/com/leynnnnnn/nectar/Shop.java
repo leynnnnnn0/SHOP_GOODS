@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,7 +74,8 @@ public class Shop extends Fragment implements ItemInterface{
     @Override
     public void onItemClick(int pos) {
         Intent intent = new Intent(getContext(), AboutItem.class);
-        it
+        Log.d("message", items[pos].getItemName());
+        intent.putExtra("itemInfo", items[pos]);
         startActivity(intent);
     }
 }
