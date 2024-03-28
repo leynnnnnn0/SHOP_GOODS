@@ -19,17 +19,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/editTextText6"
-            style="@style/SearchStyle"
-            android:layout_width="match_parent"
+        <include
             android:layout_height="50dp"
-            android:drawableStart="@drawable/search_icon"
-            android:drawablePadding="5dp"
-            android:ems="10"
-            android:hint="@string/search"
-            android:inputType="text"
-            android:padding="5dp" />
+            android:layout_width="match_parent"
+            layout="@layout/search_bar"/>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/smartSlider"

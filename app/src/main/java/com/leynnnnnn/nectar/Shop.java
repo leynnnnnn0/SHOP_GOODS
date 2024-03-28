@@ -72,6 +72,8 @@ public class Shop extends Fragment implements ItemInterface{
 
     @Override
     public void onItemClick(int pos) {
-        startActivity(new Intent(getContext(), AboutItem.class));
+        Intent intent = new Intent(getContext(), AboutItem.class);
+        it
+        startActivity(intent);
     }
 }
