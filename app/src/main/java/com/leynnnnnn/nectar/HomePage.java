@@ -3,6 +3,7 @@ package com.leynnnnnn.nectar;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -22,7 +23,9 @@ import java.util.List;
 public class HomePage extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager2;
+    TextView textView;
     ViewPagerAdapter adapter;
+    CartDbHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,12 @@ public class HomePage extends AppCompatActivity {
         viewPager2 = findViewById(R.id.viewPager);
         adapter = new ViewPagerAdapter(this);
         viewPager2.setAdapter(adapter);
+        db = new CartDbHelper(this);
+        textView = findViewById(R.id.cartItemQuantity);
+
+
+        int quantity = db.getCount();
+        textView.setText(String.valueOf(quantity));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

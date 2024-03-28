@@ -39,4 +39,17 @@
             android:text="@string/cart" />
     </com.google.android.material.tabs.TabLayout>
 
+    <TextView
+        android:id="@+id/cartItemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:fontFamily="@font/gilroy_semi_bold"
+        android:textSize="15sp"
+        android:textColor="@color/light_green"
+        android:layout_alignTop="@+id/tabLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        />
+
 </RelativeLayout>
