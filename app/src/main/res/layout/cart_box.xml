@@ -51,5 +51,15 @@
             android:layout_marginEnd="20dp"
             style="@style/HeaderStyle30"
             />
+
+        <ImageView
+            android:id="@+id/removeIconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/remove_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            />
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

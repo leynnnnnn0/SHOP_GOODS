@@ -86,4 +86,9 @@ public class CartDbHelper extends SQLiteOpenHelper {
         return count;
 
     }
+
+    public boolean removeFromCart(String itemName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("cart_items", "name = ?", new String[] {itemName}) > 0;
+    }
 }
