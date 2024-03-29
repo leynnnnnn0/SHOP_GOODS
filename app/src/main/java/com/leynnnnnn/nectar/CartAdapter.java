@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +35,16 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         holder.name.setText(itemInfo[position].getItemName());
         holder.quantity.setText(String.valueOf(itemInfo[position].getItemPieces()));
         holder.price.setText("$".concat(String.valueOf(itemInfo[position].getItemPrice())));
+
+        holder.removeIcon.setOnClickListener(v -> {
+            CartDbHelper db = new CartDbHelper(context);
+            boolean res = db.removeFromCart(itemInfo[holder.getAdapterPosition()].getItemName());
+            if(!res) {
+                Toast.makeText(context, "Item not removed.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Toast.makeText(context, "Removed Successfully.", Toast.LENGTH_SHORT).show();
+        });
     }
 
     @Override
@@ -42,14 +53,16 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView image;
+        ImageView image, removeIcon;
         TextView name, quantity, price;
+
         public ViewHolder(@NonNull View itemView, CartInterface cartInterface) {
             super(itemView);
             image = itemView.findViewById(R.id.cartItemImage);
             name = itemView.findViewById(R.id.cartItemName);
             quantity = itemView.findViewById(R.id.cartItemQuantity);
             price = itemView.findViewById(R.id.cartItemPrice);
+            removeIcon = itemView.findViewById(R.id.removeIconButton);
 
             itemView.setOnClickListener(v -> {
                 if(cartInterface != null) {
